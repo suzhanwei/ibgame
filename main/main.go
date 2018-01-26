@@ -1,7 +1,7 @@
 package main
 
 import (
-	"fmt"
+	"encoding/json"
 	"log"
 	"net/http"
 	"strconv"
@@ -17,7 +17,12 @@ type Userinfo struct {
 	Created    int64  `json:"create"`
 	Password   int64  `json:"password"`
 }
-
+/*
+type userresult struct {
+	Username string `json:"username"`
+	Password int64  `json:"password"`
+}
+*/
 func Sayhello(w http.ResponseWriter, r *http.Request) {
 	var engine *xorm.Engine
 	users := make([]Userinfo, 0)
@@ -32,8 +37,13 @@ func Sayhello(w http.ResponseWriter, r *http.Request) {
 		if err := engine.Where("username=? and password=?", uname, pword).Find(&users); err != nil {
 			panic(err)
 		} else {
+			ret:=make(map[string]int64) 
 			if len(users) > 0 {
-				fmt.Fprintln(w, "success")
+				ret[users[0].Username]= users[0].Password
+				bytes, err := json.MarshalIndent(ret, " ", "    ")
+				if err == nil {
+					w.Write(bytes)
+				}
 			}
 		}
 	}
