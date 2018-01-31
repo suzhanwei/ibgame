@@ -1,9 +1,14 @@
 package models
 
-type userLogin struct {
+type UserLogin struct {
 	Id       int    `json:"id"`
-	Uid      int    `json:"uid"`
+	Uid      string `json:"uid"`
 	Name     string `json:"name"`
 	Ctime    int64  `json:"ctime"`
-	Password int64  `json:"password"`
+	Password string `json:"password"`
+}
+
+type RegisterParam struct {
+	Name     string `json:"name"`
+	Password string `json:"password"`
 }
