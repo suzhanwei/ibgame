@@ -1,8 +1,9 @@
 package models
 
-type userinfo struct {
+type userLogin struct {
+	Id       int    `json:"id"`
 	Uid      int    `json:"uid"`
-	Username string `json:"username"`
-	Created  int64  `json:"create"`
+	Name     string `json:"name"`
+	Ctime    int64  `json:"ctime"`
 	Password int64  `json:"password"`
 }
