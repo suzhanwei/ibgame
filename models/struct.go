@@ -2,8 +2,8 @@ package models
 
 type UserLogin struct {
 	Id       int    `json:"id"`
-	Uid      string `json:"uid"`
 	Name     string `json:"name"`
+	Uid      string `json:"uid"`
 	Ctime    int64  `json:"ctime"`
 	Password string `json:"password"`
 }

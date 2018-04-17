@@ -14,31 +14,20 @@ import (
 func Register(param RegisterParam) (ret map[string]string, err error) {
 	var engine *xorm.Engine
 	ret = make(map[string]string)
-	users := make([]UserLogin, 1)
-	if engine, err = xorm.NewEngine("mysql", "szw:123456@tcp(10.231.31.240:3306)/go?charset=utf8"); err != nil {
+	var user UserLogin
+	if engine, err = xorm.NewEngine("mysql", "work:123456@tcp(39.107.94.42:3306)/go?charset=utf8"); err != nil {
 		logs.Error.Println("engine error", err)
 	}
+	user.Name = param.Name
+	user.Password = param.Password
+	uid := randSeq(10)
+	user.Uid = uid
+	user.Ctime = time.Now().Unix()
 
-	if err = engine.Where("name=?", param.Name).Find(&users); err != nil {
-		logs.Error.Println("db:err", err)
-		return
-	} else {
-		if len(users) > 0 {
-			ret[param.Name] = "已注册"
-			return
-		} else {
-			users[0].Name = param.Name
-			users[0].Password = param.Password
-			uid := randSeq(10)
-			users[0].Uid = uid
-			users[0].Ctime = time.Now().Unix()
-
-			if _, err := engine.Insert(&users); err != nil {
-				logs.Error.Println("insert error", err)
-			}
-			ret[param.Name] = uid
-		}
+	if _, err := engine.Insert(&user); err != nil {
+		logs.Error.Println("insert error", err)
 	}
+	ret[param.Name] = uid
 	return
 }
 
