@@ -31,6 +31,10 @@ func Register(param RegisterParam) (ret map[string]string, err error) {
 	return
 }
 
+func init() {
+	rand.Seed(time.Now().UnixNano())
+}
+
 var letters = []rune("1234567890")
 
 func randSeq(n int) string {

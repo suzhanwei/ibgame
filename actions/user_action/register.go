@@ -30,7 +30,7 @@ func Register(w http.ResponseWriter, r *http.Request) {
 		w.Write(bytes)
 		return
 	}
-	if re, e := user_model.Register(param); e != nil {
+	if re, e := models.Register(param); e != nil {
 		logs.Error.Println("models.Register:err", err)
 	} else {
 		logs.Info.Println(re)
