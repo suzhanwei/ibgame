@@ -1,4 +1,4 @@
-package actions
+package user_action
 
 import (
 	"encoding/json"
@@ -17,7 +17,7 @@ func Register(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 	logs.Info.Println("ServeHTTP", "reqeust = ", string(data))
-	var param models.RegisterParam
+	var param user_model.RegisterParam
 	err = json.Unmarshal(data, &param)
 
 	if param.Name == "" {
@@ -30,7 +30,7 @@ func Register(w http.ResponseWriter, r *http.Request) {
 		w.Write(bytes)
 		return
 	}
-	if re, e := models.Register(param); e != nil {
+	if re, e := user_model.Register(param); e != nil {
 		logs.Error.Println("models.Register:err", err)
 	} else {
 		logs.Info.Println(re)

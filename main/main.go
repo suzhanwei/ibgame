@@ -7,8 +7,8 @@ import (
 )
 
 func main() {
-	http.HandleFunc("/login", actions.Login)
-	http.HandleFunc("/register", actions.Register)
+	http.HandleFunc("/login", user_action.Login)
+	http.HandleFunc("/register", user_action.Register)
 	err := http.ListenAndServe(":12356", nil) //设置监听的端口
 	if err != nil {
 		logs.Error.Println("ListenAndServe:error")
