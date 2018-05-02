@@ -3,7 +3,7 @@ package actions
 import (
 	"encoding/json"
 	"logs"
-	"models"
+	"models/user_model"
 	"net/http"
 	"strconv"
 )

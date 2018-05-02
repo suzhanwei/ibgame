@@ -4,7 +4,7 @@ import (
 	"encoding/json"
 	"io/ioutil"
 	"logs"
-	"models"
+	"models/user_model"
 	"net/http"
 )
 
@@ -20,8 +20,8 @@ func Register(w http.ResponseWriter, r *http.Request) {
 	var param models.RegisterParam
 	err = json.Unmarshal(data, &param)
 
-	if param.Name==""{
-		re:="注册名字为空"
+	if param.Name == "" {
+		re := "注册名字为空"
 		ret := map[string]interface{}{"code": 401, "msg": "error", "data": re}
 		bytes, err := json.MarshalIndent(ret, " ", "    ")
 		if err != nil {
