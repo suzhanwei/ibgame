@@ -2,8 +2,8 @@ package user_action
 
 import (
 	"encoding/json"
-	"learn/logs"
-	"learn/models/user_model"
+	"ibgame/logs"
+	"ibgame/models/user_model"
 	"net/http"
 	"strconv"
 )

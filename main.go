@@ -1,8 +1,8 @@
 package main
 
 import (
-	"learn/actions/user_action"
-	"learn/logs"
+	"ibgame/actions/user_action"
+	"ibgame/logs"
 	"net/http"
 )
 

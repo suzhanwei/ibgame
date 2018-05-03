@@ -1,9 +1,9 @@
 package user_model
 
 import (
-	"learn/logs"
+	"ibgame/logs"
 
-	"learn/models"
+	"ibgame/models"
 
 	"github.com/go-xorm/xorm"
 )

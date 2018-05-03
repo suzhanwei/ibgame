@@ -1,0 +1,8 @@
+Error:2018/05/03 14:03:23 login.go:15: strconv.ParseInt:err strconv.ParseInt: parsing "": invalid syntax
+Info:2018/05/03 14:03:23 login.go:20: map[]
+Error:2018/05/03 14:03:43 login.go:15: strconv.ParseInt:err strconv.ParseInt: parsing "": invalid syntax
+Info:2018/05/03 14:03:46 login.go:20: map[]
+2018/05/03 14:17:53 打开err日志文件失败： open ../log/errors.log: no such file or directory
+Info:2018/05/03 14:29:52 login.go:20: map[suzhanwei:success]
+2018/05/03 14:40:07 打开err日志文件失败： open ../log/errors.log: no such file or directory
+Error:2018/05/03 14:43:21 main.go:14: ListenAndServe:error

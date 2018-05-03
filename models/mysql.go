@@ -1,7 +1,7 @@
 package models
 
 import (
-	"learn/logs"
+	"ibgame/logs"
 
 	_ "github.com/go-sql-driver/mysql"
 	"github.com/go-xorm/xorm"
