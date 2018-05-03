@@ -15,11 +15,10 @@ type PlayerInfo struct {
 	Type           int
 }
 
-func Add() (ret string) {
+func (pi PlayerInfo) Add() (ret string) {
 
 	o := orm.NewOrm()
 
-	var pi PlayerInfo
 	pi.Name = "Donovan Mitchell"
 	pi.NickName = "米切尔"
 	pi.PlayerID = 45
