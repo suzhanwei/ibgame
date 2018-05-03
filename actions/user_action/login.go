@@ -1,4 +1,4 @@
-package actions
+package user_action
 
 import (
 	"encoding/json"
@@ -14,7 +14,7 @@ func Login(w http.ResponseWriter, r *http.Request) {
 	if err != nil {
 		logs.Error.Println("strconv.ParseInt:err", err)
 	}
-	if re, e := models.Get(uname, pword); e != nil {
+	if re, e := user_model.Get(uname, pword); e != nil {
 		logs.Error.Println("models.Get:err", err)
 	} else {
 		logs.Info.Println(re)

@@ -1,8 +1,9 @@
-package models
+package user_model
 
 import (
 	"logs"
 	"math/rand"
+	"models"
 	"time"
 
 	_ "github.com/go-sql-driver/mysql"
@@ -10,12 +11,15 @@ import (
 )
 
 //用户信息
+func init() {
+	rand.Seed(time.Now().UnixNano())
+}
 
 func Register(param RegisterParam) (ret map[string]string, err error) {
 	var engine *xorm.Engine
 	ret = make(map[string]string)
 	var user UserLogin
-	if engine, err = xorm.NewEngine("mysql", "work:123456@tcp(39.107.94.42:3306)/go?charset=utf8"); err != nil {
+	if engine, err = models.GetEngine(); err != nil {
 		logs.Error.Println("engine error", err)
 	}
 	user.Name = param.Name
@@ -29,10 +33,6 @@ func Register(param RegisterParam) (ret map[string]string, err error) {
 	}
 	ret[param.Name] = uid
 	return
-}
-
-func init() {
-	rand.Seed(time.Now().UnixNano())
 }
 
 var letters = []rune("1234567890")
