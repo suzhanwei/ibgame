@@ -1,11 +1,11 @@
 package user_model
 
 import (
-	"logs"
+	"learn/logs"
 
-	_ "github.com/go-sql-driver/mysql"
+	"learn/models"
+
 	"github.com/go-xorm/xorm"
-	"models"
 )
 
 //用户信息

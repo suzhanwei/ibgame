@@ -1,12 +1,11 @@
 package user_model
 
 import (
-	"logs"
+	"learn/logs"
+	"learn/models"
 	"math/rand"
-	"models"
 	"time"
 
-	_ "github.com/go-sql-driver/mysql"
 	"github.com/go-xorm/xorm"
 )
 

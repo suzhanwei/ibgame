@@ -1,8 +1,8 @@
 package main
 
 import (
-	"actions/user_action"
-	"logs"
+	"learn/actions/user_action"
+	"learn/logs"
 	"net/http"
 )
 
