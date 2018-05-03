@@ -4,11 +4,12 @@ import (
 	"ibgame/actions/user_action"
 	"ibgame/logs"
 	"net/http"
+
+	"github.com/astaxie/beego"
 )
 
-
-
 func main() {
+	beego.Router("/new", &controllers.NewController{})
 	http.HandleFunc("/login", user_action.Login)
 	http.HandleFunc("/register", user_action.Register)
 	err := http.ListenAndServe(":12356", nil) //设置监听的端口
