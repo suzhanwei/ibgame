@@ -3,8 +3,8 @@ package user_action
 import (
 	"encoding/json"
 	"io/ioutil"
-	"logs"
-	"models/user_model"
+	"learn/logs"
+	"learn/models/user_model"
 	"net/http"
 )
 

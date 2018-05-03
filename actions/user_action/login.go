@@ -2,8 +2,8 @@ package user_action
 
 import (
 	"encoding/json"
-	"logs"
-	"models/user_model"
+	"learn/logs"
+	"learn/models/user_model"
 	"net/http"
 	"strconv"
 )

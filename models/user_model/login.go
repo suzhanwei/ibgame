@@ -1,16 +1,17 @@
 package user_model
 
 import (
-	"logs"
+	"learn/logs"
 
-	_ "github.com/go-sql-driver/mysql"
+	"learn/models"
+
 	"github.com/go-xorm/xorm"
-	"models"
 )
 
 //用户信息
 
 func Get(uname string, pword int64) (ret map[string]string, err error) {
+
 	var engine *xorm.Engine
 	users := make([]UserLogin, 0)
 	var e error
