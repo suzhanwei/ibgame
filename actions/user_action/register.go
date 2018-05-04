@@ -2,9 +2,9 @@ package user_action
 
 import (
 	"encoding/json"
+	"ibgame/logs"
+	"ibgame/models/user_model"
 	"io/ioutil"
-	"learn/logs"
-	"learn/models/user_model"
 	"net/http"
 )
 

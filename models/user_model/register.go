@@ -1,8 +1,8 @@
 package user_model
 
 import (
-	"learn/logs"
-	"learn/models"
+	"ibgame/logs"
+	"ibgame/models"
 	"math/rand"
 	"time"
 

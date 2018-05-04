@@ -1,11 +1,11 @@
 package user_model
 
 type UserLogin struct {
-	Id       int    `json:"id"`
-	Name     string `json:"name"`
-	Uid      string `json:"uid"`
-	Ctime    int64  `json:"ctime"`
-	Password string `json:"password"`
+	Id       int    `xorm:"not null pk autoincr INT(10)"`
+	Name     string `xorm:"not null default '' index VARCHAR(100)"`
+	Uid      string `xorm:"not null default '' VARCHAR(40)"`
+	Password string `xorm:"not null default '' VARCHAR(40)"`
+	Ctime    int64  `xorm:"not null default 0 BIGINT(20)"`
 }
 
 type RegisterParam struct {
