@@ -15,7 +15,7 @@ func Login(w http.ResponseWriter, r *http.Request) {
 		logs.Error.Println("strconv.ParseInt:err", err)
 	}
 	if re, e := user_model.Get(uname, pword); e != nil {
-		logs.Error.Println("models.Get:err", err)
+		logs.Error.Println("models.Get:err", e)
 	} else {
 		logs.Info.Println(re)
 		ret := map[string]interface{}{"code": 0, "msg": "ok", "data": re}
