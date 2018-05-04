@@ -18,11 +18,11 @@ func Add(p AddParam) (ret string, err error) {
 	if engine, e := models.GetEngine(); e == nil {
 		if _, e1 := engine.InsertOne(&pi); e != nil {
 			logs.Error.Println("db :err ", e1)
-			return
+			return "false", e1
 		}
 	} else {
 		logs.Error.Println("db :err ", e)
-		return
+		return "false", e
 	}
 	ret = "success"
 	return

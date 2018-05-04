@@ -17,7 +17,7 @@ func AddPlayer(w http.ResponseWriter, r *http.Request) {
 	var pi manage_model.AddParam
 	fmt.Println("method:", r.Method) //获取请求的方法
 	if r.Method == "GET" {
-		t, _ := template.ParseFiles("views/new.gtpl")
+		t, _ := template.ParseFiles("views/new.tpl")
 		log.Println(t.Execute(w, nil))
 	} else {
 		pi.Name = r.FormValue("name")
