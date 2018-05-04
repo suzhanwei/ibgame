@@ -8,6 +8,7 @@ import (
 )
 
 func main() {
+	http.HandleFunc("/index", manage_actions.Index)
 	http.HandleFunc("/add", manage_actions.AddPlayer)
 	http.HandleFunc("/login", user_action.Login)
 	http.HandleFunc("/register", user_action.Register)
