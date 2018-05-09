@@ -40,17 +40,18 @@ func Push_singel(param Single)(ret ,err error){
 if err != nil {
 	logs.Error.Println("json err",err)
 }
+
 body := bytes.NewReader(payloadBytes)
 
 req, err := http.NewRequest("POST", url, body)
 if err != nil {
-	// handle err
+	logs.Error.Println("http req err",err)
 }
 req.Header.Set("Content-Type", "application/json")
 req.Header.Set("Authtoken", "87297be59b7cd6eef61928785118300f3d1b46e964c7ccbb1ed8a6ace863813f")
 resp, err := http.DefaultClient.Do(req)
 if err != nil {
-	// handle err
+	logs.Error.Println("http resp",err)
 }
 defer resp.Body.Close()
 return
