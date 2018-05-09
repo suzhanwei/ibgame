@@ -2,20 +2,20 @@ package manage_actions
 
 import (
 	"encoding/json"
-	"fmt"
+	"net/http"
 	"html/template"
 	"ibgame/logs"
-	"ibgame/models/manage_model"
 	"log"
-	"net/http"
-
+	"ibgame/models/manage_model"
+	
 	"github.com/spf13/cast"
 )
 
 //添加
 func AddPlayer(w http.ResponseWriter, r *http.Request) {
+
 	var pi manage_model.AddParam
-	fmt.Println("method:", r.Method) //获取请求的方法
+
 	if r.Method == "GET" {
 		t, _ := template.ParseFiles("views/new.tpl")
 		log.Println(t.Execute(w, nil))
