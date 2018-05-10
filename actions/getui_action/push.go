@@ -1,30 +1,33 @@
 package getui_action
 
 import (
-	"fmt"
 	"encoding/json"
 	"net/http"
-	"html/template"
+	//"html/template"
 	"ibgame/logs"
-	"log"
+	//"log"
 	"ibgame/models/getui_model"
-	"github.com/spf13/cast"
+	//"github.com/spf13/cast"
 )
 const(
-	APPKEY="g5heXUmtiv9UcdMBvEGJI1"
+	APPKEY="al0zZ6nvSO9tvxPPrTVHD9"
+	MASTERSECRET="UpL4wlvdSh7xWMdRyyHP21"
 	NOMSGTYPE="notification"
 )
 //添加
 func PushSingle(w http.ResponseWriter, r *http.Request) {
 
 	var ps getui_model.Single
-	if r.Method == "GET" {
-		t, _ := template.ParseFiles("views/no.tpl")
-		log.Println(t.Execute(w, nil))
-	} else {
-		text:=cast.ToString(r.FormValue("text"))
-		title:=cast.ToString(r.FormValue("title"))
-		cid:=cast.ToString(r.FormValue("cid"))
+	//if r.Method == "GET" {
+	//	t, _ := template.ParseFiles("views/no.tpl")
+	//	log.Println(t.Execute(w, nil))
+	//} else {
+		//text:=cast.ToString(r.FormValue("text"))
+		//title:=cast.ToString(r.FormValue("title"))
+		//cid:=cast.ToString(r.FormValue("cid"))
+		text:="12345"
+		title:="1234567"
+		cid:="123"
 		ps.Message = getui_model.MessageItem{
 			Appkey:APPKEY,
 			IsOffline:true,
@@ -42,7 +45,7 @@ func PushSingle(w http.ResponseWriter, r *http.Request) {
 		}
 		ps.Cid=cid
 		ps.Requestid="123456"
-		fmt.Println(ps)
+		logs.Info.Println(ps)
 		if re, e := getui_model.PushSingel(ps); e != nil {
 			logs.Error.Println("models.Get:err", e)
 		} else {
@@ -54,5 +57,5 @@ func PushSingle(w http.ResponseWriter, r *http.Request) {
 			}
 			w.Write(bytes)
 		}
-	}
+//	}
 }
