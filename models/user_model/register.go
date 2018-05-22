@@ -25,6 +25,7 @@ func Register(param RegisterParam) (ret map[string]string, err error) {
 	user.Password = param.Password
 	uid := randSeq(10)
 	user.Uid = uid
+	user.Cid = param.Cid
 	user.Ctime = time.Now().Unix()
 
 	if _, err := engine.Insert(&user); err != nil {

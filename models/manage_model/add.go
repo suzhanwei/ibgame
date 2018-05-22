@@ -9,7 +9,6 @@ func Add(p AddParam) (ret string, err error) {
 
 	var pi PlayerInfo
 
-	pi.PlayerId = p.PlayerID
 	pi.Name = p.Name
 	pi.NickName = p.NickName
 	pi.Position = p.Position

@@ -2,12 +2,12 @@ package manage_actions
 
 import (
 	"encoding/json"
-	"net/http"
 	"html/template"
 	"ibgame/logs"
-	"log"
 	"ibgame/models/manage_model"
-	
+	"log"
+	"net/http"
+
 	"github.com/spf13/cast"
 )
 
@@ -21,7 +21,6 @@ func AddPlayer(w http.ResponseWriter, r *http.Request) {
 		log.Println(t.Execute(w, nil))
 	} else {
 		pi.Name = r.FormValue("name")
-		pi.PlayerID = cast.ToInt64(r.FormValue("id"))
 		pi.NickName = r.FormValue("nickname")
 		pi.Position = cast.ToInt(r.FormValue("position"))
 		pi.SecondPosition = cast.ToInt(r.FormValue("second"))
