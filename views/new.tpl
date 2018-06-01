@@ -3,8 +3,7 @@
 <title></title>
 </head>
 <body>
-<form action="/add" method="post">
-    球员id:<input type="text" name="id">
+<form action="/add" method="post">   
     名字:<input type="text" name="name">
     昵称:<input type="text" name="nickname">
     位置:<input type="text" name="position">

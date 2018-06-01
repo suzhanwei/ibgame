@@ -6,3 +6,542 @@ Info:2018/05/03 14:03:46 login.go:20: map[]
 Info:2018/05/03 14:29:52 login.go:20: map[suzhanwei:success]
 2018/05/03 14:40:07 打开err日志文件失败： open ../log/errors.log: no such file or directory
 Error:2018/05/03 14:43:21 main.go:14: ListenAndServe:error
+2018/05/06 17:08:51 http: panic serving [::1]:64001: runtime error: invalid memory address or nil pointer dereference
+goroutine 19 [running]:
+net/http.(*conn).serve.func1(0xc4200c0f00)
+	/usr/local/go/src/net/http/server.go:1726 +0xd0
+panic(0x14489c0, 0x17351f0)
+	/usr/local/go/src/runtime/panic.go:502 +0x229
+html/template.(*Template).escape(0x0, 0x0, 0x0)
+	/usr/local/go/src/html/template/template.go:95 +0x2e
+html/template.(*Template).Execute(0x0, 0x1522920, 0xc420182000, 0x0, 0x0, 0xc42017c090, 0xc42004ebc0)
+	/usr/local/go/src/html/template/template.go:119 +0x2f
+ibgame/actions/manage_actions.AddPlayer(0x1525ca0, 0xc420182000, 0xc420178000)
+	/Users/work/workspace/go/src/ibgame/actions/manage_actions/add.go:21 +0x7d3
+net/http.HandlerFunc.ServeHTTP(0x14e8ae0, 0x1525ca0, 0xc420182000, 0xc420178000)
+	/usr/local/go/src/net/http/server.go:1947 +0x44
+net/http.(*ServeMux).ServeHTTP(0x1744cc0, 0x1525ca0, 0xc420182000, 0xc420178000)
+	/usr/local/go/src/net/http/server.go:2337 +0x130
+net/http.serverHandler.ServeHTTP(0xc420114680, 0x1525ca0, 0xc420182000, 0xc420178000)
+	/usr/local/go/src/net/http/server.go:2694 +0xbc
+net/http.(*conn).serve(0xc4200c0f00, 0x1525fe0, 0xc4200a1500)
+	/usr/local/go/src/net/http/server.go:1830 +0x651
+created by net/http.(*Server).Serve
+	/usr/local/go/src/net/http/server.go:2795 +0x27b
+2018/05/06 17:08:51 http: panic serving [::1]:64002: runtime error: invalid memory address or nil pointer dereference
+goroutine 20 [running]:
+net/http.(*conn).serve.func1(0xc4200c0fa0)
+	/usr/local/go/src/net/http/server.go:1726 +0xd0
+panic(0x14489c0, 0x17351f0)
+	/usr/local/go/src/runtime/panic.go:502 +0x229
+html/template.(*Template).escape(0x0, 0x0, 0x0)
+	/usr/local/go/src/html/template/template.go:95 +0x2e
+html/template.(*Template).Execute(0x0, 0x1522920, 0xc4201be000, 0x0, 0x0, 0xc4201ac090, 0xc42004fbc0)
+	/usr/local/go/src/html/template/template.go:119 +0x2f
+ibgame/actions/manage_actions.AddPlayer(0x1525ca0, 0xc4201be000, 0xc420178100)
+	/Users/work/workspace/go/src/ibgame/actions/manage_actions/add.go:21 +0x7d3
+net/http.HandlerFunc.ServeHTTP(0x14e8ae0, 0x1525ca0, 0xc4201be000, 0xc420178100)
+	/usr/local/go/src/net/http/server.go:1947 +0x44
+net/http.(*ServeMux).ServeHTTP(0x1744cc0, 0x1525ca0, 0xc4201be000, 0xc420178100)
+	/usr/local/go/src/net/http/server.go:2337 +0x130
+net/http.serverHandler.ServeHTTP(0xc420114680, 0x1525ca0, 0xc4201be000, 0xc420178100)
+	/usr/local/go/src/net/http/server.go:2694 +0xbc
+net/http.(*conn).serve(0xc4200c0fa0, 0x1525fe0, 0xc4200a1600)
+	/usr/local/go/src/net/http/server.go:1830 +0x651
+created by net/http.(*Server).Serve
+	/usr/local/go/src/net/http/server.go:2795 +0x27b
+2018/05/06 17:08:51 http: panic serving [::1]:64003: runtime error: invalid memory address or nil pointer dereference
+goroutine 35 [running]:
+net/http.(*conn).serve.func1(0xc4201f8000)
+	/usr/local/go/src/net/http/server.go:1726 +0xd0
+panic(0x14489c0, 0x17351f0)
+	/usr/local/go/src/runtime/panic.go:502 +0x229
+html/template.(*Template).escape(0x0, 0x0, 0x0)
+	/usr/local/go/src/html/template/template.go:95 +0x2e
+html/template.(*Template).Execute(0x0, 0x1522920, 0xc4201be0e0, 0x0, 0x0, 0xc4201ac210, 0xc42004fbc0)
+	/usr/local/go/src/html/template/template.go:119 +0x2f
+ibgame/actions/manage_actions.AddPlayer(0x1525ca0, 0xc4201be0e0, 0xc4201fa000)
+	/Users/work/workspace/go/src/ibgame/actions/manage_actions/add.go:21 +0x7d3
+net/http.HandlerFunc.ServeHTTP(0x14e8ae0, 0x1525ca0, 0xc4201be0e0, 0xc4201fa000)
+	/usr/local/go/src/net/http/server.go:1947 +0x44
+net/http.(*ServeMux).ServeHTTP(0x1744cc0, 0x1525ca0, 0xc4201be0e0, 0xc4201fa000)
+	/usr/local/go/src/net/http/server.go:2337 +0x130
+net/http.serverHandler.ServeHTTP(0xc420114680, 0x1525ca0, 0xc4201be0e0, 0xc4201fa000)
+	/usr/local/go/src/net/http/server.go:2694 +0xbc
+net/http.(*conn).serve(0xc4201f8000, 0x1525fe0, 0xc420186100)
+	/usr/local/go/src/net/http/server.go:1830 +0x651
+created by net/http.(*Server).Serve
+	/usr/local/go/src/net/http/server.go:2795 +0x27b
+2018/05/06 17:08:52 http: panic serving [::1]:64005: runtime error: invalid memory address or nil pointer dereference
+goroutine 22 [running]:
+net/http.(*conn).serve.func1(0xc4200c1040)
+	/usr/local/go/src/net/http/server.go:1726 +0xd0
+panic(0x14489c0, 0x17351f0)
+	/usr/local/go/src/runtime/panic.go:502 +0x229
+html/template.(*Template).escape(0x0, 0x0, 0x0)
+	/usr/local/go/src/html/template/template.go:95 +0x2e
+html/template.(*Template).Execute(0x0, 0x1522920, 0xc4201be1c0, 0x0, 0x0, 0xc4201ac2d0, 0xc42004ebc0)
+	/usr/local/go/src/html/template/template.go:119 +0x2f
+ibgame/actions/manage_actions.AddPlayer(0x1525ca0, 0xc4201be1c0, 0xc420178200)
+	/Users/work/workspace/go/src/ibgame/actions/manage_actions/add.go:21 +0x7d3
+net/http.HandlerFunc.ServeHTTP(0x14e8ae0, 0x1525ca0, 0xc4201be1c0, 0xc420178200)
+	/usr/local/go/src/net/http/server.go:1947 +0x44
+net/http.(*ServeMux).ServeHTTP(0x1744cc0, 0x1525ca0, 0xc4201be1c0, 0xc420178200)
+	/usr/local/go/src/net/http/server.go:2337 +0x130
+net/http.serverHandler.ServeHTTP(0xc420114680, 0x1525ca0, 0xc4201be1c0, 0xc420178200)
+	/usr/local/go/src/net/http/server.go:2694 +0xbc
+net/http.(*conn).serve(0xc4200c1040, 0x1525fe0, 0xc4200a18c0)
+	/usr/local/go/src/net/http/server.go:1830 +0x651
+created by net/http.(*Server).Serve
+	/usr/local/go/src/net/http/server.go:2795 +0x27b
+2018/05/06 17:08:52 http: panic serving [::1]:64006: runtime error: invalid memory address or nil pointer dereference
+goroutine 23 [running]:
+net/http.(*conn).serve.func1(0xc4200c10e0)
+	/usr/local/go/src/net/http/server.go:1726 +0xd0
+panic(0x14489c0, 0x17351f0)
+	/usr/local/go/src/runtime/panic.go:502 +0x229
+html/template.(*Template).escape(0x0, 0x0, 0x0)
+	/usr/local/go/src/html/template/template.go:95 +0x2e
+html/template.(*Template).Execute(0x0, 0x1522920, 0xc42022a000, 0x0, 0x0, 0xc420220090, 0xc420050bc0)
+	/usr/local/go/src/html/template/template.go:119 +0x2f
+ibgame/actions/manage_actions.AddPlayer(0x1525ca0, 0xc42022a000, 0xc420178300)
+	/Users/work/workspace/go/src/ibgame/actions/manage_actions/add.go:21 +0x7d3
+net/http.HandlerFunc.ServeHTTP(0x14e8ae0, 0x1525ca0, 0xc42022a000, 0xc420178300)
+	/usr/local/go/src/net/http/server.go:1947 +0x44
+net/http.(*ServeMux).ServeHTTP(0x1744cc0, 0x1525ca0, 0xc42022a000, 0xc420178300)
+	/usr/local/go/src/net/http/server.go:2337 +0x130
+net/http.serverHandler.ServeHTTP(0xc420114680, 0x1525ca0, 0xc42022a000, 0xc420178300)
+	/usr/local/go/src/net/http/server.go:2694 +0xbc
+net/http.(*conn).serve(0xc4200c10e0, 0x1525fe0, 0xc4200a1940)
+	/usr/local/go/src/net/http/server.go:1830 +0x651
+created by net/http.(*Server).Serve
+	/usr/local/go/src/net/http/server.go:2795 +0x27b
+2018/05/06 17:08:52 http: panic serving [::1]:64007: runtime error: invalid memory address or nil pointer dereference
+goroutine 5 [running]:
+net/http.(*conn).serve.func1(0xc42024a000)
+	/usr/local/go/src/net/http/server.go:1726 +0xd0
+panic(0x14489c0, 0x17351f0)
+	/usr/local/go/src/runtime/panic.go:502 +0x229
+html/template.(*Template).escape(0x0, 0x0, 0x0)
+	/usr/local/go/src/html/template/template.go:95 +0x2e
+html/template.(*Template).Execute(0x0, 0x1522920, 0xc42022a0e0, 0x0, 0x0, 0xc420220210, 0xc420050bc0)
+	/usr/local/go/src/html/template/template.go:119 +0x2f
+ibgame/actions/manage_actions.AddPlayer(0x1525ca0, 0xc42022a0e0, 0xc42024c000)
+	/Users/work/workspace/go/src/ibgame/actions/manage_actions/add.go:21 +0x7d3
+net/http.HandlerFunc.ServeHTTP(0x14e8ae0, 0x1525ca0, 0xc42022a0e0, 0xc42024c000)
+	/usr/local/go/src/net/http/server.go:1947 +0x44
+net/http.(*ServeMux).ServeHTTP(0x1744cc0, 0x1525ca0, 0xc42022a0e0, 0xc42024c000)
+	/usr/local/go/src/net/http/server.go:2337 +0x130
+net/http.serverHandler.ServeHTTP(0xc420114680, 0x1525ca0, 0xc42022a0e0, 0xc42024c000)
+	/usr/local/go/src/net/http/server.go:2694 +0xbc
+net/http.(*conn).serve(0xc42024a000, 0x1525fe0, 0xc42006e140)
+	/usr/local/go/src/net/http/server.go:1830 +0x651
+created by net/http.(*Server).Serve
+	/usr/local/go/src/net/http/server.go:2795 +0x27b
+2018/05/06 17:08:52 http: panic serving [::1]:64009: runtime error: invalid memory address or nil pointer dereference
+goroutine 24 [running]:
+net/http.(*conn).serve.func1(0xc4200c1180)
+	/usr/local/go/src/net/http/server.go:1726 +0xd0
+panic(0x14489c0, 0x17351f0)
+	/usr/local/go/src/runtime/panic.go:502 +0x229
+html/template.(*Template).escape(0x0, 0x0, 0x0)
+	/usr/local/go/src/html/template/template.go:95 +0x2e
+html/template.(*Template).Execute(0x0, 0x1522920, 0xc42022a1c0, 0x0, 0x0, 0xc420220390, 0xc420051bc0)
+	/usr/local/go/src/html/template/template.go:119 +0x2f
+ibgame/actions/manage_actions.AddPlayer(0x1525ca0, 0xc42022a1c0, 0xc420178400)
+	/Users/work/workspace/go/src/ibgame/actions/manage_actions/add.go:21 +0x7d3
+net/http.HandlerFunc.ServeHTTP(0x14e8ae0, 0x1525ca0, 0xc42022a1c0, 0xc420178400)
+	/usr/local/go/src/net/http/server.go:1947 +0x44
+net/http.(*ServeMux).ServeHTTP(0x1744cc0, 0x1525ca0, 0xc42022a1c0, 0xc420178400)
+	/usr/local/go/src/net/http/server.go:2337 +0x130
+net/http.serverHandler.ServeHTTP(0xc420114680, 0x1525ca0, 0xc42022a1c0, 0xc420178400)
+	/usr/local/go/src/net/http/server.go:2694 +0xbc
+net/http.(*conn).serve(0xc4200c1180, 0x1525fe0, 0xc4200a1a80)
+	/usr/local/go/src/net/http/server.go:1830 +0x651
+created by net/http.(*Server).Serve
+	/usr/local/go/src/net/http/server.go:2795 +0x27b
+2018/05/06 17:08:52 http: panic serving [::1]:64010: runtime error: invalid memory address or nil pointer dereference
+goroutine 7 [running]:
+net/http.(*conn).serve.func1(0xc42024a0a0)
+	/usr/local/go/src/net/http/server.go:1726 +0xd0
+panic(0x14489c0, 0x17351f0)
+	/usr/local/go/src/runtime/panic.go:502 +0x229
+html/template.(*Template).escape(0x0, 0x0, 0x0)
+	/usr/local/go/src/html/template/template.go:95 +0x2e
+html/template.(*Template).Execute(0x0, 0x1522920, 0xc4201be2a0, 0x0, 0x0, 0xc4201ac390, 0xc420050bc0)
+	/usr/local/go/src/html/template/template.go:119 +0x2f
+ibgame/actions/manage_actions.AddPlayer(0x1525ca0, 0xc4201be2a0, 0xc42024c100)
+	/Users/work/workspace/go/src/ibgame/actions/manage_actions/add.go:21 +0x7d3
+net/http.HandlerFunc.ServeHTTP(0x14e8ae0, 0x1525ca0, 0xc4201be2a0, 0xc42024c100)
+	/usr/local/go/src/net/http/server.go:1947 +0x44
+net/http.(*ServeMux).ServeHTTP(0x1744cc0, 0x1525ca0, 0xc4201be2a0, 0xc42024c100)
+	/usr/local/go/src/net/http/server.go:2337 +0x130
+net/http.serverHandler.ServeHTTP(0xc420114680, 0x1525ca0, 0xc4201be2a0, 0xc42024c100)
+	/usr/local/go/src/net/http/server.go:2694 +0xbc
+net/http.(*conn).serve(0xc42024a0a0, 0x1525fe0, 0xc42006e240)
+	/usr/local/go/src/net/http/server.go:1830 +0x651
+created by net/http.(*Server).Serve
+	/usr/local/go/src/net/http/server.go:2795 +0x27b
+2018/05/06 17:08:52 http: panic serving [::1]:64011: runtime error: invalid memory address or nil pointer dereference
+goroutine 25 [running]:
+net/http.(*conn).serve.func1(0xc4200c1220)
+	/usr/local/go/src/net/http/server.go:1726 +0xd0
+panic(0x14489c0, 0x17351f0)
+	/usr/local/go/src/runtime/panic.go:502 +0x229
+html/template.(*Template).escape(0x0, 0x0, 0x0)
+	/usr/local/go/src/html/template/template.go:95 +0x2e
+html/template.(*Template).Execute(0x0, 0x1522920, 0xc4201820e0, 0x0, 0x0, 0xc42017c510, 0xc420282bc0)
+	/usr/local/go/src/html/template/template.go:119 +0x2f
+ibgame/actions/manage_actions.AddPlayer(0x1525ca0, 0xc4201820e0, 0xc420178500)
+	/Users/work/workspace/go/src/ibgame/actions/manage_actions/add.go:21 +0x7d3
+net/http.HandlerFunc.ServeHTTP(0x14e8ae0, 0x1525ca0, 0xc4201820e0, 0xc420178500)
+	/usr/local/go/src/net/http/server.go:1947 +0x44
+net/http.(*ServeMux).ServeHTTP(0x1744cc0, 0x1525ca0, 0xc4201820e0, 0xc420178500)
+	/usr/local/go/src/net/http/server.go:2337 +0x130
+net/http.serverHandler.ServeHTTP(0xc420114680, 0x1525ca0, 0xc4201820e0, 0xc420178500)
+	/usr/local/go/src/net/http/server.go:2694 +0xbc
+net/http.(*conn).serve(0xc4200c1220, 0x1525fe0, 0xc4200a1bc0)
+	/usr/local/go/src/net/http/server.go:1830 +0x651
+created by net/http.(*Server).Serve
+	/usr/local/go/src/net/http/server.go:2795 +0x27b
+2018/05/06 17:08:58 http: panic serving [::1]:64013: runtime error: invalid memory address or nil pointer dereference
+goroutine 9 [running]:
+net/http.(*conn).serve.func1(0xc42024a140)
+	/usr/local/go/src/net/http/server.go:1726 +0xd0
+panic(0x14489c0, 0x17351f0)
+	/usr/local/go/src/runtime/panic.go:502 +0x229
+html/template.(*Template).escape(0x0, 0x0, 0x0)
+	/usr/local/go/src/html/template/template.go:95 +0x2e
+html/template.(*Template).Execute(0x0, 0x1522920, 0xc42022a2a0, 0x0, 0x0, 0xc420220630, 0xc420051bc0)
+	/usr/local/go/src/html/template/template.go:119 +0x2f
+ibgame/actions/manage_actions.AddPlayer(0x1525ca0, 0xc42022a2a0, 0xc42024c200)
+	/Users/work/workspace/go/src/ibgame/actions/manage_actions/add.go:21 +0x7d3
+net/http.HandlerFunc.ServeHTTP(0x14e8ae0, 0x1525ca0, 0xc42022a2a0, 0xc42024c200)
+	/usr/local/go/src/net/http/server.go:1947 +0x44
+net/http.(*ServeMux).ServeHTTP(0x1744cc0, 0x1525ca0, 0xc42022a2a0, 0xc42024c200)
+	/usr/local/go/src/net/http/server.go:2337 +0x130
+net/http.serverHandler.ServeHTTP(0xc420114680, 0x1525ca0, 0xc42022a2a0, 0xc42024c200)
+	/usr/local/go/src/net/http/server.go:2694 +0xbc
+net/http.(*conn).serve(0xc42024a140, 0x1525fe0, 0xc42006e340)
+	/usr/local/go/src/net/http/server.go:1830 +0x651
+created by net/http.(*Server).Serve
+	/usr/local/go/src/net/http/server.go:2795 +0x27b
+2018/05/06 17:08:58 http: panic serving [::1]:64014: runtime error: invalid memory address or nil pointer dereference
+goroutine 10 [running]:
+net/http.(*conn).serve.func1(0xc42024a1e0)
+	/usr/local/go/src/net/http/server.go:1726 +0xd0
+panic(0x14489c0, 0x17351f0)
+	/usr/local/go/src/runtime/panic.go:502 +0x229
+html/template.(*Template).escape(0x0, 0x0, 0x0)
+	/usr/local/go/src/html/template/template.go:95 +0x2e
+html/template.(*Template).Execute(0x0, 0x1522920, 0xc4201be380, 0x0, 0x0, 0xc4201ac450, 0xc420053bc0)
+	/usr/local/go/src/html/template/template.go:119 +0x2f
+ibgame/actions/manage_actions.AddPlayer(0x1525ca0, 0xc4201be380, 0xc42024c300)
+	/Users/work/workspace/go/src/ibgame/actions/manage_actions/add.go:21 +0x7d3
+net/http.HandlerFunc.ServeHTTP(0x14e8ae0, 0x1525ca0, 0xc4201be380, 0xc42024c300)
+	/usr/local/go/src/net/http/server.go:1947 +0x44
+net/http.(*ServeMux).ServeHTTP(0x1744cc0, 0x1525ca0, 0xc4201be380, 0xc42024c300)
+	/usr/local/go/src/net/http/server.go:2337 +0x130
+net/http.serverHandler.ServeHTTP(0xc420114680, 0x1525ca0, 0xc4201be380, 0xc42024c300)
+	/usr/local/go/src/net/http/server.go:2694 +0xbc
+net/http.(*conn).serve(0xc42024a1e0, 0x1525fe0, 0xc42006e3c0)
+	/usr/local/go/src/net/http/server.go:1830 +0x651
+created by net/http.(*Server).Serve
+	/usr/local/go/src/net/http/server.go:2795 +0x27b
+2018/05/06 17:08:58 http: panic serving [::1]:64015: runtime error: invalid memory address or nil pointer dereference
+goroutine 27 [running]:
+net/http.(*conn).serve.func1(0xc4200c12c0)
+	/usr/local/go/src/net/http/server.go:1726 +0xd0
+panic(0x14489c0, 0x17351f0)
+	/usr/local/go/src/runtime/panic.go:502 +0x229
+html/template.(*Template).escape(0x0, 0x0, 0x0)
+	/usr/local/go/src/html/template/template.go:95 +0x2e
+html/template.(*Template).Execute(0x0, 0x1522920, 0xc4201821c0, 0x0, 0x0, 0xc42017c690, 0xc420282bc0)
+	/usr/local/go/src/html/template/template.go:119 +0x2f
+ibgame/actions/manage_actions.AddPlayer(0x1525ca0, 0xc4201821c0, 0xc420178600)
+	/Users/work/workspace/go/src/ibgame/actions/manage_actions/add.go:21 +0x7d3
+net/http.HandlerFunc.ServeHTTP(0x14e8ae0, 0x1525ca0, 0xc4201821c0, 0xc420178600)
+	/usr/local/go/src/net/http/server.go:1947 +0x44
+net/http.(*ServeMux).ServeHTTP(0x1744cc0, 0x1525ca0, 0xc4201821c0, 0xc420178600)
+	/usr/local/go/src/net/http/server.go:2337 +0x130
+net/http.serverHandler.ServeHTTP(0xc420114680, 0x1525ca0, 0xc4201821c0, 0xc420178600)
+	/usr/local/go/src/net/http/server.go:2694 +0xbc
+net/http.(*conn).serve(0xc4200c12c0, 0x1525fe0, 0xc4200a1d40)
+	/usr/local/go/src/net/http/server.go:1830 +0x651
+created by net/http.(*Server).Serve
+	/usr/local/go/src/net/http/server.go:2795 +0x27b
+Error:2018/05/06 17:08:59 login.go:15: strconv.ParseInt:err strconv.ParseInt: parsing "": invalid syntax
+Info:2018/05/06 17:09:00 login.go:20: map[]
+method: GET
+2018/05/06 17:09:12 <nil>
+2018/05/06 17:09:14 http: panic serving [::1]:64017: runtime error: invalid memory address or nil pointer dereference
+goroutine 29 [running]:
+net/http.(*conn).serve.func1(0xc4200c1360)
+	/usr/local/go/src/net/http/server.go:1726 +0xd0
+panic(0x14489c0, 0x17351f0)
+	/usr/local/go/src/runtime/panic.go:502 +0x229
+html/template.(*Template).escape(0x0, 0x0, 0x0)
+	/usr/local/go/src/html/template/template.go:95 +0x2e
+html/template.(*Template).Execute(0x0, 0x1522920, 0xc420182460, 0x0, 0x0, 0xc42017da70, 0xc4201a5bc0)
+	/usr/local/go/src/html/template/template.go:119 +0x2f
+ibgame/actions/manage_actions.AddPlayer(0x1525ca0, 0xc420182460, 0xc420178e00)
+	/Users/work/workspace/go/src/ibgame/actions/manage_actions/add.go:21 +0x7d3
+net/http.HandlerFunc.ServeHTTP(0x14e8ae0, 0x1525ca0, 0xc420182460, 0xc420178e00)
+	/usr/local/go/src/net/http/server.go:1947 +0x44
+net/http.(*ServeMux).ServeHTTP(0x1744cc0, 0x1525ca0, 0xc420182460, 0xc420178e00)
+	/usr/local/go/src/net/http/server.go:2337 +0x130
+net/http.serverHandler.ServeHTTP(0xc420114680, 0x1525ca0, 0xc420182460, 0xc420178e00)
+	/usr/local/go/src/net/http/server.go:2694 +0xbc
+net/http.(*conn).serve(0xc4200c1360, 0x1525fe0, 0xc4200a1e40)
+	/usr/local/go/src/net/http/server.go:1830 +0x651
+created by net/http.(*Server).Serve
+	/usr/local/go/src/net/http/server.go:2795 +0x27b
+2018/05/06 17:09:14 http: panic serving [::1]:64021: runtime error: invalid memory address or nil pointer dereference
+goroutine 52 [running]:
+net/http.(*conn).serve.func1(0xc4200c1720)
+	/usr/local/go/src/net/http/server.go:1726 +0xd0
+panic(0x14489c0, 0x17351f0)
+	/usr/local/go/src/runtime/panic.go:502 +0x229
+html/template.(*Template).escape(0x0, 0x0, 0x0)
+	/usr/local/go/src/html/template/template.go:95 +0x2e
+html/template.(*Template).Execute(0x0, 0x1522920, 0xc420182540, 0x0, 0x0, 0xc42017db30, 0xc420283bc0)
+	/usr/local/go/src/html/template/template.go:119 +0x2f
+ibgame/actions/manage_actions.AddPlayer(0x1525ca0, 0xc420182540, 0xc420178c00)
+	/Users/work/workspace/go/src/ibgame/actions/manage_actions/add.go:21 +0x7d3
+net/http.HandlerFunc.ServeHTTP(0x14e8ae0, 0x1525ca0, 0xc420182540, 0xc420178c00)
+	/usr/local/go/src/net/http/server.go:1947 +0x44
+net/http.(*ServeMux).ServeHTTP(0x1744cc0, 0x1525ca0, 0xc420182540, 0xc420178c00)
+	/usr/local/go/src/net/http/server.go:2337 +0x130
+net/http.serverHandler.ServeHTTP(0xc420114680, 0x1525ca0, 0xc420182540, 0xc420178c00)
+	/usr/local/go/src/net/http/server.go:2694 +0xbc
+net/http.(*conn).serve(0xc4200c1720, 0x1525fe0, 0xc4202ca4c0)
+	/usr/local/go/src/net/http/server.go:1830 +0x651
+created by net/http.(*Server).Serve
+	/usr/local/go/src/net/http/server.go:2795 +0x27b
+2018/05/06 17:09:14 http: panic serving [::1]:64023: runtime error: invalid memory address or nil pointer dereference
+goroutine 12 [running]:
+net/http.(*conn).serve.func1(0xc42024a280)
+	/usr/local/go/src/net/http/server.go:1726 +0xd0
+panic(0x14489c0, 0x17351f0)
+	/usr/local/go/src/runtime/panic.go:502 +0x229
+html/template.(*Template).escape(0x0, 0x0, 0x0)
+	/usr/local/go/src/html/template/template.go:95 +0x2e
+html/template.(*Template).Execute(0x0, 0x1522920, 0xc42022a380, 0x0, 0x0, 0xc4202207b0, 0xc420283bc0)
+	/usr/local/go/src/html/template/template.go:119 +0x2f
+ibgame/actions/manage_actions.AddPlayer(0x1525ca0, 0xc42022a380, 0xc42024c400)
+	/Users/work/workspace/go/src/ibgame/actions/manage_actions/add.go:21 +0x7d3
+net/http.HandlerFunc.ServeHTTP(0x14e8ae0, 0x1525ca0, 0xc42022a380, 0xc42024c400)
+	/usr/local/go/src/net/http/server.go:1947 +0x44
+net/http.(*ServeMux).ServeHTTP(0x1744cc0, 0x1525ca0, 0xc42022a380, 0xc42024c400)
+	/usr/local/go/src/net/http/server.go:2337 +0x130
+net/http.serverHandler.ServeHTTP(0xc420114680, 0x1525ca0, 0xc42022a380, 0xc42024c400)
+	/usr/local/go/src/net/http/server.go:2694 +0xbc
+net/http.(*conn).serve(0xc42024a280, 0x1525fe0, 0xc42006e500)
+	/usr/local/go/src/net/http/server.go:1830 +0x651
+created by net/http.(*Server).Serve
+	/usr/local/go/src/net/http/server.go:2795 +0x27b
+2018/05/06 17:09:14 http: panic serving [::1]:64024: runtime error: invalid memory address or nil pointer dereference
+goroutine 57 [running]:
+net/http.(*conn).serve.func1(0xc4200c1860)
+	/usr/local/go/src/net/http/server.go:1726 +0xd0
+panic(0x14489c0, 0x17351f0)
+	/usr/local/go/src/runtime/panic.go:502 +0x229
+html/template.(*Template).escape(0x0, 0x0, 0x0)
+	/usr/local/go/src/html/template/template.go:95 +0x2e
+html/template.(*Template).Execute(0x0, 0x1522920, 0xc420182620, 0x0, 0x0, 0xc42017dd70, 0xc420284bc0)
+	/usr/local/go/src/html/template/template.go:119 +0x2f
+ibgame/actions/manage_actions.AddPlayer(0x1525ca0, 0xc420182620, 0xc420178f00)
+	/Users/work/workspace/go/src/ibgame/actions/manage_actions/add.go:21 +0x7d3
+net/http.HandlerFunc.ServeHTTP(0x14e8ae0, 0x1525ca0, 0xc420182620, 0xc420178f00)
+	/usr/local/go/src/net/http/server.go:1947 +0x44
+net/http.(*ServeMux).ServeHTTP(0x1744cc0, 0x1525ca0, 0xc420182620, 0xc420178f00)
+	/usr/local/go/src/net/http/server.go:2337 +0x130
+net/http.serverHandler.ServeHTTP(0xc420114680, 0x1525ca0, 0xc420182620, 0xc420178f00)
+	/usr/local/go/src/net/http/server.go:2694 +0xbc
+net/http.(*conn).serve(0xc4200c1860, 0x1525fe0, 0xc4202ca700)
+	/usr/local/go/src/net/http/server.go:1830 +0x651
+created by net/http.(*Server).Serve
+	/usr/local/go/src/net/http/server.go:2795 +0x27b
+2018/05/06 17:09:14 http: panic serving [::1]:64025: runtime error: invalid memory address or nil pointer dereference
+goroutine 58 [running]:
+net/http.(*conn).serve.func1(0xc4200c1900)
+	/usr/local/go/src/net/http/server.go:1726 +0xd0
+panic(0x14489c0, 0x17351f0)
+	/usr/local/go/src/runtime/panic.go:502 +0x229
+html/template.(*Template).escape(0x0, 0x0, 0x0)
+	/usr/local/go/src/html/template/template.go:95 +0x2e
+html/template.(*Template).Execute(0x0, 0x1522920, 0xc4201be460, 0x0, 0x0, 0xc4201ac510, 0xc420285bc0)
+	/usr/local/go/src/html/template/template.go:119 +0x2f
+ibgame/actions/manage_actions.AddPlayer(0x1525ca0, 0xc4201be460, 0xc420179000)
+	/Users/work/workspace/go/src/ibgame/actions/manage_actions/add.go:21 +0x7d3
+net/http.HandlerFunc.ServeHTTP(0x14e8ae0, 0x1525ca0, 0xc4201be460, 0xc420179000)
+	/usr/local/go/src/net/http/server.go:1947 +0x44
+net/http.(*ServeMux).ServeHTTP(0x1744cc0, 0x1525ca0, 0xc4201be460, 0xc420179000)
+	/usr/local/go/src/net/http/server.go:2337 +0x130
+net/http.serverHandler.ServeHTTP(0xc420114680, 0x1525ca0, 0xc4201be460, 0xc420179000)
+	/usr/local/go/src/net/http/server.go:2694 +0xbc
+net/http.(*conn).serve(0xc4200c1900, 0x1525fe0, 0xc4202ca780)
+	/usr/local/go/src/net/http/server.go:1830 +0x651
+created by net/http.(*Server).Serve
+	/usr/local/go/src/net/http/server.go:2795 +0x27b
+2018/05/06 17:09:14 http: panic serving [::1]:64026: runtime error: invalid memory address or nil pointer dereference
+goroutine 14 [running]:
+net/http.(*conn).serve.func1(0xc42024a320)
+	/usr/local/go/src/net/http/server.go:1726 +0xd0
+panic(0x14489c0, 0x17351f0)
+	/usr/local/go/src/runtime/panic.go:502 +0x229
+html/template.(*Template).escape(0x0, 0x0, 0x0)
+	/usr/local/go/src/html/template/template.go:95 +0x2e
+html/template.(*Template).Execute(0x0, 0x1522920, 0xc42022a460, 0x0, 0x0, 0xc420220930, 0xc420283bc0)
+	/usr/local/go/src/html/template/template.go:119 +0x2f
+ibgame/actions/manage_actions.AddPlayer(0x1525ca0, 0xc42022a460, 0xc42024c500)
+	/Users/work/workspace/go/src/ibgame/actions/manage_actions/add.go:21 +0x7d3
+net/http.HandlerFunc.ServeHTTP(0x14e8ae0, 0x1525ca0, 0xc42022a460, 0xc42024c500)
+	/usr/local/go/src/net/http/server.go:1947 +0x44
+net/http.(*ServeMux).ServeHTTP(0x1744cc0, 0x1525ca0, 0xc42022a460, 0xc42024c500)
+	/usr/local/go/src/net/http/server.go:2337 +0x130
+net/http.serverHandler.ServeHTTP(0xc420114680, 0x1525ca0, 0xc42022a460, 0xc42024c500)
+	/usr/local/go/src/net/http/server.go:2694 +0xbc
+net/http.(*conn).serve(0xc42024a320, 0x1525fe0, 0xc42006e640)
+	/usr/local/go/src/net/http/server.go:1830 +0x651
+created by net/http.(*Server).Serve
+	/usr/local/go/src/net/http/server.go:2795 +0x27b
+2018/05/06 17:09:18 http: panic serving [::1]:64027: runtime error: invalid memory address or nil pointer dereference
+goroutine 60 [running]:
+net/http.(*conn).serve.func1(0xc4200c19a0)
+	/usr/local/go/src/net/http/server.go:1726 +0xd0
+panic(0x14489c0, 0x17351f0)
+	/usr/local/go/src/runtime/panic.go:502 +0x229
+html/template.(*Template).escape(0x0, 0x0, 0x0)
+	/usr/local/go/src/html/template/template.go:95 +0x2e
+html/template.(*Template).Execute(0x0, 0x1522920, 0xc42022a540, 0x0, 0x0, 0xc4202209f0, 0xc420284bc0)
+	/usr/local/go/src/html/template/template.go:119 +0x2f
+ibgame/actions/manage_actions.AddPlayer(0x1525ca0, 0xc42022a540, 0xc420179100)
+	/Users/work/workspace/go/src/ibgame/actions/manage_actions/add.go:21 +0x7d3
+net/http.HandlerFunc.ServeHTTP(0x14e8ae0, 0x1525ca0, 0xc42022a540, 0xc420179100)
+	/usr/local/go/src/net/http/server.go:1947 +0x44
+net/http.(*ServeMux).ServeHTTP(0x1744cc0, 0x1525ca0, 0xc42022a540, 0xc420179100)
+	/usr/local/go/src/net/http/server.go:2337 +0x130
+net/http.serverHandler.ServeHTTP(0xc420114680, 0x1525ca0, 0xc42022a540, 0xc420179100)
+	/usr/local/go/src/net/http/server.go:2694 +0xbc
+net/http.(*conn).serve(0xc4200c19a0, 0x1525fe0, 0xc4202ca880)
+	/usr/local/go/src/net/http/server.go:1830 +0x651
+created by net/http.(*Server).Serve
+	/usr/local/go/src/net/http/server.go:2795 +0x27b
+2018/05/06 17:09:18 http: panic serving [::1]:64028: runtime error: invalid memory address or nil pointer dereference
+goroutine 61 [running]:
+net/http.(*conn).serve.func1(0xc4200c1a40)
+	/usr/local/go/src/net/http/server.go:1726 +0xd0
+panic(0x14489c0, 0x17351f0)
+	/usr/local/go/src/runtime/panic.go:502 +0x229
+html/template.(*Template).escape(0x0, 0x0, 0x0)
+	/usr/local/go/src/html/template/template.go:95 +0x2e
+html/template.(*Template).Execute(0x0, 0x1522920, 0xc42022a620, 0x0, 0x0, 0xc420220ab0, 0xc42027ebc0)
+	/usr/local/go/src/html/template/template.go:119 +0x2f
+ibgame/actions/manage_actions.AddPlayer(0x1525ca0, 0xc42022a620, 0xc420179200)
+	/Users/work/workspace/go/src/ibgame/actions/manage_actions/add.go:21 +0x7d3
+net/http.HandlerFunc.ServeHTTP(0x14e8ae0, 0x1525ca0, 0xc42022a620, 0xc420179200)
+	/usr/local/go/src/net/http/server.go:1947 +0x44
+net/http.(*ServeMux).ServeHTTP(0x1744cc0, 0x1525ca0, 0xc42022a620, 0xc420179200)
+	/usr/local/go/src/net/http/server.go:2337 +0x130
+net/http.serverHandler.ServeHTTP(0xc420114680, 0x1525ca0, 0xc42022a620, 0xc420179200)
+	/usr/local/go/src/net/http/server.go:2694 +0xbc
+net/http.(*conn).serve(0xc4200c1a40, 0x1525fe0, 0xc4202ca900)
+	/usr/local/go/src/net/http/server.go:1830 +0x651
+created by net/http.(*Server).Serve
+	/usr/local/go/src/net/http/server.go:2795 +0x27b
+2018/05/06 17:09:18 http: panic serving [::1]:64029: runtime error: invalid memory address or nil pointer dereference
+goroutine 67 [running]:
+net/http.(*conn).serve.func1(0xc42024a3c0)
+	/usr/local/go/src/net/http/server.go:1726 +0xd0
+panic(0x14489c0, 0x17351f0)
+	/usr/local/go/src/runtime/panic.go:502 +0x229
+html/template.(*Template).escape(0x0, 0x0, 0x0)
+	/usr/local/go/src/html/template/template.go:95 +0x2e
+html/template.(*Template).Execute(0x0, 0x1522920, 0xc42022a700, 0x0, 0x0, 0xc420220c30, 0xc42027ebc0)
+	/usr/local/go/src/html/template/template.go:119 +0x2f
+ibgame/actions/manage_actions.AddPlayer(0x1525ca0, 0xc42022a700, 0xc42024c600)
+	/Users/work/workspace/go/src/ibgame/actions/manage_actions/add.go:21 +0x7d3
+net/http.HandlerFunc.ServeHTTP(0x14e8ae0, 0x1525ca0, 0xc42022a700, 0xc42024c600)
+	/usr/local/go/src/net/http/server.go:1947 +0x44
+net/http.(*ServeMux).ServeHTTP(0x1744cc0, 0x1525ca0, 0xc42022a700, 0xc42024c600)
+	/usr/local/go/src/net/http/server.go:2337 +0x130
+net/http.serverHandler.ServeHTTP(0xc420114680, 0x1525ca0, 0xc42022a700, 0xc42024c600)
+	/usr/local/go/src/net/http/server.go:2694 +0xbc
+net/http.(*conn).serve(0xc42024a3c0, 0x1525fe0, 0xc42006e840)
+	/usr/local/go/src/net/http/server.go:1830 +0x651
+created by net/http.(*Server).Serve
+	/usr/local/go/src/net/http/server.go:2795 +0x27b
+2018/05/06 17:09:23 http: panic serving [::1]:64031: runtime error: invalid memory address or nil pointer dereference
+goroutine 41 [running]:
+net/http.(*conn).serve.func1(0xc4201f80a0)
+	/usr/local/go/src/net/http/server.go:1726 +0xd0
+panic(0x14489c0, 0x17351f0)
+	/usr/local/go/src/runtime/panic.go:502 +0x229
+html/template.(*Template).escape(0x0, 0x0, 0x0)
+	/usr/local/go/src/html/template/template.go:95 +0x2e
+html/template.(*Template).Execute(0x0, 0x1522920, 0xc42022a7e0, 0x0, 0x0, 0xc420220cf0, 0xc420285bc0)
+	/usr/local/go/src/html/template/template.go:119 +0x2f
+ibgame/actions/manage_actions.AddPlayer(0x1525ca0, 0xc42022a7e0, 0xc4201fa100)
+	/Users/work/workspace/go/src/ibgame/actions/manage_actions/add.go:21 +0x7d3
+net/http.HandlerFunc.ServeHTTP(0x14e8ae0, 0x1525ca0, 0xc42022a7e0, 0xc4201fa100)
+	/usr/local/go/src/net/http/server.go:1947 +0x44
+net/http.(*ServeMux).ServeHTTP(0x1744cc0, 0x1525ca0, 0xc42022a7e0, 0xc4201fa100)
+	/usr/local/go/src/net/http/server.go:2337 +0x130
+net/http.serverHandler.ServeHTTP(0xc420114680, 0x1525ca0, 0xc42022a7e0, 0xc4201fa100)
+	/usr/local/go/src/net/http/server.go:2694 +0xbc
+net/http.(*conn).serve(0xc4201f80a0, 0x1525fe0, 0xc420186400)
+	/usr/local/go/src/net/http/server.go:1830 +0x651
+created by net/http.(*Server).Serve
+	/usr/local/go/src/net/http/server.go:2795 +0x27b
+2018/05/06 17:09:23 http: panic serving [::1]:64032: runtime error: invalid memory address or nil pointer dereference
+goroutine 42 [running]:
+net/http.(*conn).serve.func1(0xc4201f8140)
+	/usr/local/go/src/net/http/server.go:1726 +0xd0
+panic(0x14489c0, 0x17351f0)
+	/usr/local/go/src/runtime/panic.go:502 +0x229
+html/template.(*Template).escape(0x0, 0x0, 0x0)
+	/usr/local/go/src/html/template/template.go:95 +0x2e
+html/template.(*Template).Execute(0x0, 0x1522920, 0xc42022a8c0, 0x0, 0x0, 0xc420220db0, 0xc420053bc0)
+	/usr/local/go/src/html/template/template.go:119 +0x2f
+ibgame/actions/manage_actions.AddPlayer(0x1525ca0, 0xc42022a8c0, 0xc4201fa200)
+	/Users/work/workspace/go/src/ibgame/actions/manage_actions/add.go:21 +0x7d3
+net/http.HandlerFunc.ServeHTTP(0x14e8ae0, 0x1525ca0, 0xc42022a8c0, 0xc4201fa200)
+	/usr/local/go/src/net/http/server.go:1947 +0x44
+net/http.(*ServeMux).ServeHTTP(0x1744cc0, 0x1525ca0, 0xc42022a8c0, 0xc4201fa200)
+	/usr/local/go/src/net/http/server.go:2337 +0x130
+net/http.serverHandler.ServeHTTP(0xc420114680, 0x1525ca0, 0xc42022a8c0, 0xc4201fa200)
+	/usr/local/go/src/net/http/server.go:2694 +0xbc
+net/http.(*conn).serve(0xc4201f8140, 0x1525fe0, 0xc420186480)
+	/usr/local/go/src/net/http/server.go:1830 +0x651
+created by net/http.(*Server).Serve
+	/usr/local/go/src/net/http/server.go:2795 +0x27b
+2018/05/06 17:09:23 http: panic serving [::1]:64033: runtime error: invalid memory address or nil pointer dereference
+goroutine 71 [running]:
+net/http.(*conn).serve.func1(0xc42024a460)
+	/usr/local/go/src/net/http/server.go:1726 +0xd0
+panic(0x14489c0, 0x17351f0)
+	/usr/local/go/src/runtime/panic.go:502 +0x229
+html/template.(*Template).escape(0x0, 0x0, 0x0)
+	/usr/local/go/src/html/template/template.go:95 +0x2e
+html/template.(*Template).Execute(0x0, 0x1522920, 0xc42022a9a0, 0x0, 0x0, 0xc420220f30, 0xc420053bc0)
+	/usr/local/go/src/html/template/template.go:119 +0x2f
+ibgame/actions/manage_actions.AddPlayer(0x1525ca0, 0xc42022a9a0, 0xc42024c700)
+	/Users/work/workspace/go/src/ibgame/actions/manage_actions/add.go:21 +0x7d3
+net/http.HandlerFunc.ServeHTTP(0x14e8ae0, 0x1525ca0, 0xc42022a9a0, 0xc42024c700)
+	/usr/local/go/src/net/http/server.go:1947 +0x44
+net/http.(*ServeMux).ServeHTTP(0x1744cc0, 0x1525ca0, 0xc42022a9a0, 0xc42024c700)
+	/usr/local/go/src/net/http/server.go:2337 +0x130
+net/http.serverHandler.ServeHTTP(0xc420114680, 0x1525ca0, 0xc42022a9a0, 0xc42024c700)
+	/usr/local/go/src/net/http/server.go:2694 +0xbc
+net/http.(*conn).serve(0xc42024a460, 0x1525fe0, 0xc42006eb00)
+	/usr/local/go/src/net/http/server.go:1830 +0x651
+created by net/http.(*Server).Serve
+	/usr/local/go/src/net/http/server.go:2795 +0x27b
+method: GET
+2018/05/06 17:12:11 <nil>
+2018/05/06 17:12:13 <nil>
+2018/05/09 23:25:01 <nil>
+Info:2018/05/09 23:26:30 add.go:32: success
+Info:2018/05/09 23:27:33 add.go:32: success
+Info:2018/05/09 23:27:38 add.go:32: success
