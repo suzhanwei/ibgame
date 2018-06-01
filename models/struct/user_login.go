@@ -1,4 +1,4 @@
-package user_model
+package strucct
 
 type UserLogin struct {
 	Id         int    `xorm:"not null pk autoincr INT(10)"`
@@ -10,11 +10,4 @@ type UserLogin struct {
 	Cid        string `xorm:"not null default '' VARCHAR(40)"`
 	MailVerify int    `xorm:"not null default 0 TINYINT(4)"`
 	Utime      int64  `xorm:"not null default 0 BIGINT(20)"`
-}
-
-type RegisterParam struct {
-	Mail  string `json:"mail"`
-	Name  string `json:"name"`
-	Token string `json:"token"`
-	Cid   string `json:"cid"`
 }

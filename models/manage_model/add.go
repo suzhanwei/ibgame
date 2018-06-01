@@ -2,7 +2,7 @@ package manage_model
 
 import (
 	"ibgame/logs"
-	"ibgame/models"
+	"ibgame/models/mysql"
 )
 
 func Add(p AddParam) (ret string, err error) {
@@ -14,7 +14,7 @@ func Add(p AddParam) (ret string, err error) {
 	pi.Position = p.Position
 	pi.SecondPosition = p.SecondPosition
 	pi.Type = p.Type
-	if engine, e := models.GetEngine(); e == nil {
+	if engine, e := mysql.GetEngine(); e == nil {
 		if _, e1 := engine.InsertOne(&pi); e != nil {
 			logs.Error.Println("db :err ", e1)
 			return "false", e1
