@@ -6,8 +6,10 @@ import (
 	"ibgame/models/user_model"
 	"io/ioutil"
 	"net/http"
+	"strings"
 )
 
+// Register 注册action
 func Register(w http.ResponseWriter, r *http.Request) {
 
 	defer r.Body.Close()
@@ -41,4 +43,12 @@ func Register(w http.ResponseWriter, r *http.Request) {
 		}
 		w.Write(bytes)
 	}
+}
+
+// ParseAuthToken token解析
+func ParseAuthToken(w http.ResponseWriter, r *http.Request) {
+	t := r.FormValue("token")
+	str := strings.Replace(t, " ", "+", -1)
+	logs.Info.Println("t", str)
+	user_model.ParseAuthToken(str)
 }

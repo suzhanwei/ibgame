@@ -25,6 +25,12 @@ func AddPlayer(w http.ResponseWriter, r *http.Request) {
 		pi.Position = cast.ToInt(r.FormValue("position"))
 		pi.SecondPosition = cast.ToInt(r.FormValue("second"))
 		pi.Type = cast.ToInt(r.FormValue("type"))
+		pi.Score = cast.ToInt(r.FormValue("score"))
+		pi.Rebound = cast.ToInt(r.FormValue("rebound"))
+		pi.Assist = cast.ToInt(r.FormValue("assist"))
+		pi.Steal = cast.ToInt(r.FormValue("steal"))
+		pi.Cap = cast.ToInt(r.FormValue("cap"))
+		pi.AppearNum = cast.ToInt(r.FormValue("num"))
 		if re, e := manage_model.Add(pi); e != nil {
 			logs.Error.Println("models.Get:err", e)
 		} else {
