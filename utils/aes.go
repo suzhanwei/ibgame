@@ -6,8 +6,14 @@ import (
 	"crypto/cipher"
 	"crypto/rand"
 	"encoding/base64"
+	"fmt"
 	"io"
 )
+
+func Bas(str string) {
+	r := base64.StdEncoding.EncodeToString([]byte(str))
+	fmt.Println(r)
+}
 
 // Aes128CBCEncrypt 加密 参数key为密钥，长度只能是16、24、32字节
 func Aes128CBCEncrypt(str, serviceKey string) (ret string) {
@@ -26,30 +32,25 @@ func Aes128CBCEncrypt(str, serviceKey string) (ret string) {
 }
 
 // Aes128CBCDecrypt 解密
-func Aes128CBCDecrypt(data, serviceKey string, emptyIV bool) (ret string, rerr error) {
-	if decryptText, err := base64.StdEncoding.DecodeString(data); err != nil {
-		rerr = err
-	} else if key, err := base64.StdEncoding.DecodeString(serviceKey); err != nil {
-		rerr = err
-	} else if block, err := aes.NewCipher(key); err != nil {
-		rerr = err
-	} else {
-		blockSize := block.BlockSize()
-		iv := make([]byte, blockSize)
-		if !emptyIV {
-			iv = decryptText[:blockSize]
-			decryptText = decryptText[blockSize:]
-		}
-		blockMode := cipher.NewCBCDecrypter(block, iv)
-		blockMode.CryptBlocks(decryptText, decryptText)
-		for i := len(decryptText) - 1; i > 0; i-- {
-			if decryptText[i] != 0x00 {
-				decryptText = decryptText[:i+1]
-				break
-			}
-		}
-		ret = string(decryptText)
+func Aes128CBCDecrypt(data, serviceKey string, emptyIV bool) (ret string) {
+	decryptText, _ := base64.StdEncoding.DecodeString(data)
+	key, _ := base64.StdEncoding.DecodeString(serviceKey)
+	block, _ := aes.NewCipher(key)
+	blockSize := block.BlockSize()
+	iv := make([]byte, blockSize)
+	if emptyIV == false {
+		iv = decryptText[:blockSize]
+		decryptText = decryptText[blockSize:]
 	}
+	blockMode := cipher.NewCBCDecrypter(block, iv)
+	blockMode.CryptBlocks(decryptText, decryptText)
+	for i := len(decryptText) - 1; i > 0; i-- {
+		if decryptText[i] != 0x00 {
+			decryptText = decryptText[:i+1]
+			break
+		}
+	}
+	ret = string(decryptText)
 	return
 }
 

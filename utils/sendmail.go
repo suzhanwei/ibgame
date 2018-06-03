@@ -19,9 +19,9 @@ func SendMail(p SendMailParam) (err error) {
 	)
 	m.SetHeader("Subject", p.Title)   // 主题
 	m.SetBody("text/html", p.Content) // 正文
-	d := gomail.NewDialer("mail.srv", 25, "", "")
+	d := gomail.NewDialer("smtp.qq.com", 465, "545397649@qq.com", "subo5211314+")
 	if e := d.DialAndSend(m); e != nil {
-		err = e
+		panic(e)
 	}
 	return
 }
