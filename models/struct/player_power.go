@@ -10,4 +10,5 @@ type PlayerPower struct {
 	Pass             int   `xorm:"not null default 0 INT(11)"`
 	InsideDefense    int   `xorm:"not null default 0 INT(11)"`
 	OutsideDefense   int   `xorm:"not null default 0 INT(11)"`
+	BasePower        int   `xorm:"not null default 0 INT(11)"`
 }

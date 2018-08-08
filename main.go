@@ -3,15 +3,12 @@ package main
 import (
 	"fmt"
 	"ibgame/actions/getui_action"
-	"ibgame/actions/manage_actions"
 	"ibgame/actions/user_action"
 	"ibgame/logs"
 	"net/http"
 )
 
 func main() {
-	http.HandleFunc("/add", manage_actions.AddPlayer)
-	http.HandleFunc("/index", manage_actions.Index)
 	http.HandleFunc("/login", user_action.Login)
 	http.HandleFunc("/register", user_action.Register)
 	http.HandleFunc("/pushsingle", getui_action.PushSingle)

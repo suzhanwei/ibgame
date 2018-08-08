@@ -6,7 +6,7 @@ import (
 )
 
 // Get 用户信息
-func Get(uname string, pword int64) (ret map[string]string, err error) {
+func Get(uname string, pword string) (ret map[string]string, err error) {
 
 	users := make([]UserLogin, 0)
 	if engine, e := mysql.GetEngine(); e == nil {

@@ -34,21 +34,16 @@ func Register(param RegisterParam) (ret map[string]string, err error) {
 		logs.Error.Println("engine error", err)
 		return
 	}
-
 	pass := utils.Checkmail(param.Mail)
-
 	if !pass {
 		err = errors.New("邮箱无效")
 		return
 	}
-
 	if len(param.Token) <= 0 {
 		err = errors.New("token 无效")
 		return
 	}
-
 	str := utils.Aes128CBCDecrypt(param.Token, reKey, false)
-
 	logs.Info.Println(str)
 	now := time.Now().Unix()
 	user.Name = param.Name
@@ -66,15 +61,17 @@ func Register(param RegisterParam) (ret map[string]string, err error) {
 		return
 	}
 	at := generateAuthToken(uid, now)
-
 	ret[param.Name] = fmt.Sprintf("uid是%s http://localhost:12356/parseauthtoken?token=%s", uid, at)
-
-	// var s utils.SendMailParam
-	// s.Content = fmt.Sprintf("http://localhost:12356/parseauthtoken?token=%s", at)
-	// s.Title = "请鉴权"
-	// s.ToMail = "545397649@qq.com"
-	// s.ToName = "清风未醉"
-	// utils.SendMail(s)
+	var s utils.SendMailParam
+	s.Content = fmt.Sprintf("http://localhost:12356/parseauthtoken?token=%s", at)
+	s.Title = "请鉴权"
+	s.ToMail = param.Mail
+	s.ToName = param.Name
+	err = utils.SendMail(s)
+	if err != nil {
+		logs.Error.Println(err)
+		return
+	}
 	return
 }
 

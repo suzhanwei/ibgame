@@ -5,15 +5,12 @@ import (
 	"ibgame/logs"
 	"ibgame/models/user_model"
 	"net/http"
-	"strconv"
 )
 
 func Login(w http.ResponseWriter, r *http.Request) {
 	uname := r.FormValue("username")
-	pword, err := strconv.ParseInt(r.FormValue("password"), 10, 64)
-	if err != nil {
-		logs.Error.Println("strconv.ParseInt:err", err)
-	}
+	pword := r.FormValue("password")
+
 	if re, e := user_model.Get(uname, pword); e != nil {
 		logs.Error.Println("models.Get:err", e)
 	} else {
